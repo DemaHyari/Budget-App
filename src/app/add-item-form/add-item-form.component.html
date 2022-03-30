@@ -1,0 +1,20 @@
+<form #itemForm="ngForm" (ngSubmit)="onSubmit(itemForm)" fxLayout="column" fxLayoutGap="10px">
+    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+        <div fxFlex="30">
+            <input [ngModel]="item?.amount" class="input" type="number" placeholder="Amount" name="amount" required>
+        </div>
+        <div [fxFlex]="isNewItem ? 65:70">
+            <input [ngModel]="item?.description" class="input" type="text" placeholder="Description" name="description" required>
+        </div>
+        <div fxFlex="5" [fxShow]="isNewItem">
+            <button type="submit" class="button is-light" [disabled]="!itemForm">
+                Add
+            </button>
+        </div>
+    </div>
+    <div [fxShow]="!isNewItem" fxLayoutAlign="end center" >
+        <button type="submit" class="button is-light" [disabled]="!itemForm">
+            Save
+        </button>
+    </div>
+</form>

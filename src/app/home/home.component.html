@@ -1,1 +1,17 @@
-<p>home works!</p>
+<section fxLayout="column" fxLayoutAlign="center center">
+    <div class="top-bar" fxLayout="row" fxLayoutAlign="center center">
+        <h1>Budget Calculator</h1>
+    </div>
+    <div class="total-section" fxLayout="row" fxLayoutAlign="center center">
+        <h2 [ngClass]="{'red': totalBudget < 0,'green': totalBudget > 0}">{{totalBudget}}</h2>
+    </div>
+    <div class="add-items-container" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+        <div class="item-container" fxLayout="row" fxLayoutAlign="center center">
+            <app-add-item-form (formSubmit)="addItem($event)" fxFlex="100"></app-add-item-form>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="item-container" fxLayout="row" fxLayoutAlign="center center">
+            <app-budget-item-list (deleteItem)="deleteItem($event)" [budgetItems]="items" (updateItem)="updateItem($event)" fxFlex="100"></app-budget-item-list>
+        </div>
+    </div>
+</section>

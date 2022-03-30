@@ -1,0 +1,18 @@
+<section class="budget-items-container" fxLayout="row" fxLayoutAlign="space-around start" fxLayoutGap="15px">
+    <div class="income-column" fxFlex="50" fxLayout="column"  fxLayoutGap="10px">
+        <h1>Income</h1>
+        <div class="budget-items" fxLayout="column" fxLayoutGap="15px">
+            <div *ngFor="let item of budgetItems">
+                <app-budget-item [fxShow]="item.amount >= 0" [item]="item" (removeBtnClick)="onDeleteItem(item)" (cardClick)="onCardClick(item)"></app-budget-item>
+            </div>
+        </div>
+    </div>
+    <div class="expenses-column" fxFlex="50" fxLayout="column" fxLayoutGap="10px">
+        <h1>Expenses</h1>
+        <div class="budget-items" fxLayout="column" fxLayoutGap="15px">
+            <div *ngFor="let item of budgetItems">
+                <app-budget-item [fxShow]="item.amount < 0" [item]="item" (removeBtnClick)="onDeleteItem(item)" (cardClick)="onCardClick(item)"></app-budget-item>
+            </div>
+        </div>
+    </div>
+</section>

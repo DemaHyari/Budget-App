@@ -1,0 +1,37 @@
+@import "./../../main-styles.scss";
+:host ::ng-deep{
+  .budget-items-container {
+    .income-column,
+    .expenses-column {
+      h1 {
+        font-family: "Lato";
+        font-size: 22px;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+    }
+    .income-column {
+      .budget-items {
+        .budget-item-card {
+          .budget-item {
+            
+          }
+        }
+      }
+    }
+    .expenses-column {
+      .budget-items {
+        .budget-item-card {
+          .budget-item {
+            span {
+              color: $red;
+              &.amount{
+                background-color: $light-red;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<div fxLayout="row" fxLayoutAlign="space-between center">
+    <h2 mat-dialog-title>Edit</h2>
+    <button (click)="cancel()" class="button is-white" fxLayout="row" fxLayoutAlign="center center">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M12.8926 1.1074C12.5671 0.781964 12.0395 0.781963 11.714 1.1074L7 5.82145L2.28595 1.1074C1.96052 0.781964 1.43288 0.781964 1.10744 1.1074C0.782006 1.43284 0.782006 1.96047 1.10744 2.28591L5.82149 6.99996L1.10744 11.714C0.782007 12.0394 0.782007 12.5671 1.10744 12.8925C1.43288 13.218 1.96052 13.218 2.28595 12.8925L7 8.17847L11.714 12.8925C12.0395 13.2179 12.5671 13.218 12.8926 12.8925C13.218 12.5671 13.218 12.0394 12.8926 11.714L8.17851 6.99996L12.8926 2.28591C13.218 1.96048 13.218 1.43284 12.8926 1.1074Z"
+                fill="#BFBFBF" />
+        </svg>
+    </button>
+</div>
+<mat-dialog-content>
+    <app-add-item-form [item]="item" (formSubmit)="onSubmitted($event)"></app-add-item-form>
+</mat-dialog-content>

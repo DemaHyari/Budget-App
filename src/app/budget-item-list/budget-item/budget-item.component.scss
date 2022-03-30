@@ -1,0 +1,60 @@
+@import "./../../../main-styles.scss";
+:host {
+  .budget-item-card {
+    width: 100%;
+    position: relative;
+    &:hover {
+      .x-icon-button {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    .x-icon-button {
+      position: absolute;
+      height: 25px;
+      width: 25px;
+      border-radius: 50%;
+      background-color: $dark;
+      transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+      transform: scale(0);
+      opacity: 0;
+      margin: -10px 0 0 -10px;
+      cursor: pointer;
+      mat-icon {
+        color: $light-gray;
+      }
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+    .budget-item {
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      background-color: rgba(#fff, .4);
+      padding: 10px;
+      font-size: 16px;
+      &.income{
+        span {
+            color: $green;
+            &.amount{
+              background-color: $light-green;
+            }
+          }
+      }
+      &.expenses{
+        span {
+            color: $red;
+            &.amount{
+              background-color: $light-red;
+            }
+          }
+      }
+      .description{
+
+      }
+      .amount{
+        padding: 5px;
+      }
+    }
+    
+  }
+}
